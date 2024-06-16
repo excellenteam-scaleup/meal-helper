@@ -43,6 +43,9 @@ def recipe(ingredient):
     """
     Renders and returns an HTML page with a random recipe for a given main ingredient.
     """
+    # BONUS:
+    # If there are no meals for a given ingredient, return a 404 NOT FOUND error response.
+    # Hint: Read the documentation of flask. This is a bonus :P
     return render_template("recipe.html",
                            ingredient=ingredient,
                            recipe=get_recipe_for(ingredient))
@@ -53,6 +56,26 @@ def recipe(ingredient):
 # Route "/recipe/<ingredient>/json" should return a JSON with the output of `get_recipe_for`.
 # Hint: `flask.jsonify()`
 
+
+# BONUS:
+# Add these endpoints:
+# 1. "/personal" with POST method:
+#    - Receives a recipe JSON in the request body, and adds it to a list of personal recipes.
+#    - Make the list persistent in a JSON file.
+#    - Redirect the client to the page of the newly saved recipe.
+#    - Hint: `flask.request`
+#    - Hint 2: `flast.redirect`
+#    - Hint 3: Use `requests` to check if it works.
+# 2. "/personal/<name>/<json:bool>" with GET method:
+#    - Returns the recipe page for the given name, or a JSON if `json == 1`
+# 3. "/personal/<name>" with DELETE method:
+#    - Delete the recipe with the given name
+# 4. "/personal/all" with GET method:
+#    - Returns a JSON with the list of personal recipes.
+
+
+# EXTRA BONUS:
+# Change the "/recipe" endpoints above to search the personal list as well.
 
 if __name__ == '__main__':
     app.run(debug=True)
