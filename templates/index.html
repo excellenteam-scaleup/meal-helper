@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Helper</title>
+</head>
+<body>
+<h1>What would you like to eat today?</h1>
+<div>
+    <label for="ingredient-input">I have:</label>
+    <input id="ingredient-input" placeholder="main ingredient">
+    <button onclick="findRecipe()">Find Recipe</button>
+</div>
+<script>
+    function findRecipe() {
+        const ingredient = document.getElementById("ingredient-input").value
+        location.pathname = `/${ingredient.replaceAll(" ", "_").toLowerCase()}`
+    }
+</script>
+</body>
+</html>
