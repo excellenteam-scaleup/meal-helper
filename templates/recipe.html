@@ -5,7 +5,8 @@
     <title>Recipe with {{ ingredient }}</title>
 </head>
 <body>
-<h1>Here's a recipe that contains {{ ingredient }}!</h1>
+<h1>Here's a recipe that contains {{ ingredient.replace("_", " ") }}!</h1>
+<h2>{{ recipe.name }}</h2>
 <img src="{{ recipe.image }}">
 <div>
     <ul>
