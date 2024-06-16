@@ -14,7 +14,7 @@
 <script>
     function findRecipe() {
         const ingredient = document.getElementById("ingredient-input").value
-        location.pathname = `/${ingredient.replaceAll(" ", "_").toLowerCase()}`
+        location.pathname = `/recipe/${ingredient.replaceAll(" ", "_").toLowerCase()}`
     }
 </script>
 </body>
